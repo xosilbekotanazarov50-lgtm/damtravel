@@ -261,7 +261,7 @@ async def select_time(callback: types.CallbackQuery, state: FSMContext):
         return
     
     hour = int(callback.data.split("_")[1])
-    time_str = f"{hour}:00"
+    time_str = str(hour)
     await state.update_data(time=time_str)
     
     await submit_order(callback.message, state, data, lang)
